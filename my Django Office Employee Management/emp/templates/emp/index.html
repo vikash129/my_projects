@@ -1,0 +1,27 @@
+{% extends 'emp/base.html' %}
+{% load static %}
+
+{% block title %}
+    Office Employee ManageMent System
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="container" style="height: 90vh;">
+
+        <h1 class="text-primary text-center">
+            Office Employee ManageMent System</h1>
+
+        <div class="row text-center justify-content-center mt-4">
+            <div class="col-md-8">
+                <a class="btn btn-primary" href="{% url 'all_emp' %}" role="button">View All Employee</a>
+                <a class="btn btn-success" href="{% url 'add_emp' %}" role="button">Add An Employee</a>
+                <a class="btn btn-danger" href="{% url 'remove_emp' %}" role="button">Remove An Employee</a>
+                <a class="btn btn-secondary" href="{% url 'filter_emp' %}" role="button">Filter Employee Details</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>{% endblock %}{% block js %}{% endblock %}

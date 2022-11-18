@@ -1,0 +1,81 @@
+{% extends 'emp/base.html' %}
+
+{% block title %}
+    Office Employee ManageMent System
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+
+    <h1 class="text-primary text-center">
+        Add  Employee</h1>
+
+    <form action="/add_emp" method="post" class="mt-4">
+        {% csrf_token %}
+
+        <div class="row text-center justify-content-center">
+            <div class="col-md-6">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" value="{{ first_name }}">
+            </div>
+
+            <div class="col-md-6">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" value="{{ last_name }}">
+            </div>
+        </div>
+
+        <div class="row text-center justify-content-center">
+
+        <div class="col-md-4">
+            <label for="salary">Salary</label>
+            <input type="number" id="salary" name="salary" value="{{ salary }}">
+        </div>
+
+        <div class="col-md-4">
+            <label for="bonus">Bonus</label>
+            <input type="number" id="bonus" name="bonus" value="{{ bonus }}">
+        </div>
+</div>
+
+<div class="row text-center justify-content-center">
+
+        <div class="col-md-4">
+           
+            <select name="dept" id="dept" class="dropdown" >
+                <option for="dept" class="btn btn-primary dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Choose Department</option>
+           
+                {% for dept in depts %}
+                <option value="{{ dept.id }}" class="dropdown-item" aria-labelledby="dropdownMenuButton1">
+                {{ dept }}
+                </option>
+                {% endfor %}
+            </select>
+         </div>
+
+         <div class="col-md-4">
+                <label for="role">Role</label>
+                <select name="role" id="role" class="dropdown-toggle">
+                    {% for role in roles %}
+                        <option value="{{ role.id }}" class="dropdown-item">
+                            {{ role }}
+                        </option>
+                    {% endfor %}
+                </select>
+        </div>
+    </div>
+
+
+            <div class="col-md-4">
+                                    <label for="phone">Phone Number</label>
+                                    <input id="phone" name="phone" value="{{ phone }}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+</div>
+{% endblock %}
+{% block js %}{% endblock %}

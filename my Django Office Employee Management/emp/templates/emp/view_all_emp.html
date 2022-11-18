@@ -1,0 +1,56 @@
+{% extends 'emp/base.html' %}
+{% load static %}
+
+{% block title %}
+    Office Employee ManageMent System
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="container" >
+
+        <h1 class="text-primary text-center">
+          All  Employee</h1>
+
+        <table class="mt-4 mb-4 table ">
+            <caption style="caption-side:center" >employee data</caption>
+
+            <thead class="table-dark">
+                <th>id</th>
+                <th  scope="col">FIRST NAME</th>
+                <th  scope="col">LAST NAME</th>
+                <th  scope="col">SALARY</th>
+                <th  scope="col">BONUS</th>
+                <th  scope="col">PHONE</th>
+                <th  scope="col">ROLE</th>
+                <th colspan="2" scope="col">DEPARTMENT </th>
+                <!-- <th  scope="col">DEPARTMENT LOCATION</th> -->
+                <th  scope="col">HIRE DATE</th>
+            </thead>
+
+            <tbody>
+
+                {% for emp in employees %}
+                  <tr>
+                    <th scope="row">{{emp.id}}</th>
+                    <td>{{emp.first_name}}</td>
+                    <td>{{emp.last_name}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.bonus}}</td>
+                    <td>{{emp.phone}}</td>
+                    <td>{{emp.role.name}}</td>
+                    <td>{{emp.dept.name}}</td>
+                    <td>{{emp.dept.location}}</td>
+                    <td>{{emp.hire_date}}</td>
+                  </tr>
+                       {% endfor %}
+
+            </tbody>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>{% endblock %}{% block js %}{% endblock %}

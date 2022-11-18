@@ -1,0 +1,58 @@
+{% extends 'chat/base.html' %}
+{% load static %}
+
+{% block title %}
+  <title> Sign In</title> 
+{% endblock %}
+
+{% block body %}
+
+
+
+{% csrf_token %}
+
+{% if error %}
+<h1> {{error}} </h1>
+{% endif %}
+
+
+<form class="container mt-3 p-5" action="" method="post"> 
+    {% csrf_token %}
+
+    <h1 class="text-primary text-center"> Sign Up   </h1>
+
+                <div class="mb-3">
+                    <label for="roomInput">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" >
+                </div>
+
+                <div class="mb-2">
+                    <label for="roomInput">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" >
+                </div>
+
+                <div class="mb-2">
+                    <label for="pwd">Password</label>
+                    <input type="text" class="form-control" id="pwd" name="pwd" >
+                </div>
+
+                <div class="mb-2">
+                    <label for="pwd1">Confirm Password</label>
+                    <input type="text" class="form-control" id="pwd1" name="pwd2" >
+                </div>
+              
+                <button type="submit"  class="btn btn-success">Submit</button>
+
+                <p>Already Have Account ?  <a href="login">Log In</a> </p>
+
+
+            </div>
+
+        </form>
+
+
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}

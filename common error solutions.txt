@@ -1,0 +1,16 @@
+
+error
+-----
+PowerShell says "execution of scripts is disabled on this system."
+
+
+solution
+-----------
+As an Administrator, you can set the execution policy by typing this into your PowerShell window:
+
+Set-ExecutionPolicy RemoteSigned
+For more information, see Using the Set-ExecutionPolicy Cmdlet.
+
+When you are done, you can set the policy back to its default value with:
+
+Set-ExecutionPolicy Restricted

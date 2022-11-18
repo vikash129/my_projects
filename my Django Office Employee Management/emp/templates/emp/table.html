@@ -1,0 +1,57 @@
+<style>
+    table{
+        width: 100%;
+        border: 2px solid black;
+
+    }
+    th{
+        text-align: center;
+        border: 2px solid red;
+
+    }
+
+    th, td {
+  padding: 15px;
+}
+table {
+  border-spacing: 30px;
+}
+
+/* HTML Table - Zebra Stripes */
+/* If you add a background color on every other table row, you will get a nice zebra stripes effect. */
+tr:nth-child(even) {
+  background-color: #8eeaea;
+}
+
+/* Vertical Zebra Stripes */
+/* To make vertical zebra stripes, style every other column, instead of every other row. */
+td:nth-child(even), th:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+/* horizontal dividers: */
+tr {
+  border-bottom: 15px solid #ddd;
+}
+
+td:hover {background-color: #c9b542;}
+
+</style>
+
+<table>
+  <tr>
+    <th ></th>
+    <th scope="col">Month</th>
+    <th scope="col">Savings</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>February</td>
+    <td>$80</td>
+  </tr>
+</table>
